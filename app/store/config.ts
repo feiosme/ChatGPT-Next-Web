@@ -47,7 +47,7 @@ export const DEFAULT_CONFIG = {
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "glm-4" as ModelType,
+    model: "qwen-max" as ModelType,
     temperature: 0.5,
     top_p: 0.7,
     max_tokens: 32768,

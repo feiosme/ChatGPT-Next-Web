@@ -203,7 +203,7 @@ const anthropicModels = [
 export const DEFAULT_MODELS = [
   ...qwenModels.map((name) => ({
     name,
-    avaliable: true,
+    available: true,
     provider: {
       id: "openai",
       providerName: "OpenAI",
@@ -212,7 +212,7 @@ export const DEFAULT_MODELS = [
   })),
   ...yiModels.map((name) => ({
     name,
-    avaliable: true,
+    available: true,
     provider: {
       id: "openai",
       providerName: "OpenAI",
@@ -221,7 +221,7 @@ export const DEFAULT_MODELS = [
   })),
   ...zhipuModels.map((name) => ({
     name,
-    avaliable: true,
+    available: true,
     provider: {
       id: "openai",
       providerName: "OpenAI",
