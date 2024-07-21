@@ -11,9 +11,11 @@ export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
 export const DEFAULT_API_HOST = "https://api.nextchat.dev";
 export const OPENAI_BASE_URL = "https://api.openai.com";
 export const ANTHROPIC_BASE_URL = "https://api.anthropic.com";
-export const QWEN_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1";
+export const QWEN_BASE_URL =
+  "https://dashscope.aliyuncs.com/compatible-mode/v1";
 export const YI_BASE_URL = "https://api.lingyiwanwu.com/v1";
-export const ZHIPU_BASE_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
+export const ZHIPU_BASE_URL =
+  "https://open.bigmodel.cn/api/paas/v4/chat/completions";
 
 export const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/";
 
@@ -156,6 +158,9 @@ export const Baidu = {
     if (modelName === "ernie-speed-8k") {
       endpoint = "ernie_speed";
     }
+    if (modelName === "llama3-70b-instruct") {
+      endpoint = "llama_3_70b";
+    }
     return `rpc/2.0/ai_custom/v1/wenxinworkshop/chat/${endpoint}`;
   },
 };
@@ -207,43 +212,40 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gemini-pro-vision": "2023-12",
 };
 
-const qwenModels = [
-  "qwen-max",
-  "qwen-max-0428",
-  "qwen-long",
-  "qwen-max-longcontext",
-  "qwen-plus",
-  "qwen-turbo",
-  "bailian-summary",
-  "qwen1.5-110b-chat",
-  "qwen-72b-chat",
-  "qwen1.5-72b-chat",
-  "qwen1.5-32b-chat",
-  "qwen1.5-14b-chat",
-  "qwen1.5-7b-chat"
-]
+// const qwenModels = [
+//   "qwen-max",
+//   "qwen-max-0428",
+//   "qwen-long",
+//   "qwen-max-longcontext",
+//   "qwen-plus",
+//   "qwen-turbo",
+//   "bailian-summary",
+//   "qwen1.5-110b-chat",
+//   "qwen-72b-chat",
+//   "qwen1.5-72b-chat",
+//   "qwen1.5-32b-chat",
+//   "qwen1.5-14b-chat",
+//   "qwen1.5-7b-chat"
+// ]
 
 const yiModels = [
   "yi-large",
   "yi-large-rag",
   "yi-medium-200k",
   "yi-vision",
-  "yi-large-turbo"
-]
+  "yi-large-turbo",
+];
 
-const zhipuModels = [
-  "glm-4",
-  "glm-3-turbo"
-]
+const zhipuModels = ["glm-4", "glm-3-turbo"];
 
 const openaiModels = [
   "gpt-3.5-turbo",
   "gpt-3.5-turbo-1106",
   "gpt-3.5-turbo-0125",
-  "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
+  // "gpt-4",
+  // "gpt-4-0613",
+  // "gpt-4-32k",
+  // "gpt-4-32k-0613",
   "gpt-4-turbo",
   "gpt-4-turbo-preview",
   "gpt-4o",
@@ -252,7 +254,7 @@ const openaiModels = [
   "gpt-4o-mini-2024-07-18",
   "gpt-4-vision-preview",
   "gpt-4-turbo-2024-04-09",
-  "gpt-4-1106-preview",
+  // "gpt-4-1106-preview",
 ];
 
 const googleModels = [
@@ -276,45 +278,56 @@ const baiduModels = [
   "ernie-4.0-turbo-8k",
   "ernie-4.0-8k",
   "ernie-4.0-8k-preview",
-  "ernie-4.0-8k-preview-0518",
+  // "ernie-4.0-8k-preview-0518",
   "ernie-4.0-8k-latest",
   "ernie-3.5-8k",
-  "ernie-3.5-8k-0205",
-  "ernie-speed-128k",
-  "ernie-speed-8k",
-  "ernie-lite-8k",
-  "ernie-tiny-8k",
+  // "ernie-3.5-8k-0205",
+  // "ernie-speed-128k",
+  // "ernie-speed-8k",
+  // "ernie-lite-8k",
+  // "ernie-tiny-8k",
+  "llama3-70b-instruct",
 ];
 
 const bytedanceModels = [
-  "Doubao-lite-4k",
-  "Doubao-lite-32k",
+  // "Doubao-lite-4k",
+  // "Doubao-lite-32k",
   "Doubao-lite-128k",
-  "Doubao-pro-4k",
-  "Doubao-pro-32k",
+  // "Doubao-pro-4k",
+  // "Doubao-pro-32k",
   "Doubao-pro-128k",
+  // "Moonshot-v1-8k",
+  // "Moonshot-v1-32k",
+  "Moonshot-v1-128k",
 ];
 
 const alibabaModes = [
   "qwen-turbo",
   "qwen-plus",
   "qwen-max",
-  "qwen-max-0428",
-  "qwen-max-0403",
-  "qwen-max-0107",
+  // "qwen-max-0428",
+  // "qwen-max-0403",
+  // "qwen-max-0107",
   "qwen-max-longcontext",
+  "qwen1.5-110b-chat",
+  "qwen-72b-chat",
+  "qwen1.5-72b-chat",
+  "qwen1.5-32b-chat",
+  "qwen1.5-14b-chat",
+  "qwen1.5-7b-chat",
+  "qwen2-72b-instruct",
 ];
 
 export const DEFAULT_MODELS = [
-  ...qwenModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "openai",
-      providerName: "OpenAI",
-      providerType: "openai",
-    },
-  })),
+  // ...qwenModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "openai",
+  //     providerName: "OpenAI",
+  //     providerType: "openai",
+  //   },
+  // })),
   ...yiModels.map((name) => ({
     name,
     available: true,
@@ -342,33 +355,33 @@ export const DEFAULT_MODELS = [
       providerType: "openai",
     },
   })),
-  ...openaiModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
-    },
-  })),
-  ...googleModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "google",
-      providerName: "Google",
-      providerType: "google",
-    },
-  })),
-  ...anthropicModels.map((name) => ({
-    name,
-    available: true,
-    provider: {
-      id: "anthropic",
-      providerName: "Anthropic",
-      providerType: "anthropic",
-    },
-  })),
+  // ...openaiModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "azure",
+  //     providerName: "Azure",
+  //     providerType: "azure",
+  //   },
+  // })),
+  // ...googleModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "google",
+  //     providerName: "Google",
+  //     providerType: "google",
+  //   },
+  // })),
+  // ...anthropicModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "Anthropic",
+  //     providerType: "anthropic",
+  //   },
+  // })),
   ...baiduModels.map((name) => ({
     name,
     available: true,
