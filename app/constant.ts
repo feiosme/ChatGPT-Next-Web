@@ -256,14 +256,24 @@ export const KnowledgeCutOffDate: Record<string, string> = {
   "gemini-pro-vision": "2023-12",
 };
 
+const yiModels = [
+  "yi-large",
+  "yi-large-rag",
+  "yi-medium-200k",
+  "yi-vision",
+  "yi-large-turbo",
+];
+
+const zhipuModels = ["glm-4", "glm-3-turbo"];
+
 const openaiModels = [
   "gpt-3.5-turbo",
   "gpt-3.5-turbo-1106",
   "gpt-3.5-turbo-0125",
-  "gpt-4",
-  "gpt-4-0613",
-  "gpt-4-32k",
-  "gpt-4-32k-0613",
+  // "gpt-4",
+  // "gpt-4-0613",
+  // "gpt-4-32k",
+  // "gpt-4-32k-0613",
   "gpt-4-turbo",
   "gpt-4-turbo-preview",
   "gpt-4o",
@@ -298,33 +308,44 @@ const baiduModels = [
   "ernie-4.0-turbo-8k",
   "ernie-4.0-8k",
   "ernie-4.0-8k-preview",
-  "ernie-4.0-8k-preview-0518",
+  // "ernie-4.0-8k-preview-0518",
   "ernie-4.0-8k-latest",
   "ernie-3.5-8k",
-  "ernie-3.5-8k-0205",
-  "ernie-speed-128k",
-  "ernie-speed-8k",
-  "ernie-lite-8k",
-  "ernie-tiny-8k",
+  // "ernie-3.5-8k-0205",
+  // "ernie-speed-128k",
+  // "ernie-speed-8k",
+  // "ernie-lite-8k",
+  // "ernie-tiny-8k",
+  "llama3-70b-instruct",
 ];
 
 const bytedanceModels = [
-  "Doubao-lite-4k",
-  "Doubao-lite-32k",
+  // "Doubao-lite-4k",
+  // "Doubao-lite-32k",
   "Doubao-lite-128k",
-  "Doubao-pro-4k",
-  "Doubao-pro-32k",
+  // "Doubao-pro-4k",
+  // "Doubao-pro-32k",
   "Doubao-pro-128k",
+  // "Moonshot-v1-8k",
+  // "Moonshot-v1-32k",
+  "Moonshot-v1-128k",
 ];
 
 const alibabaModes = [
   "qwen-turbo",
   "qwen-plus",
   "qwen-max",
-  "qwen-max-0428",
-  "qwen-max-0403",
-  "qwen-max-0107",
+  // "qwen-max-0428",
+  // "qwen-max-0403",
+  // "qwen-max-0107",
   "qwen-max-longcontext",
+  "qwen1.5-110b-chat",
+  "qwen-72b-chat",
+  "qwen1.5-72b-chat",
+  "qwen1.5-32b-chat",
+  "qwen1.5-14b-chat",
+  "qwen1.5-7b-chat",
+  "qwen2-72b-instruct",
 ];
 
 const tencentModels = [
@@ -360,39 +381,61 @@ export const DEFAULT_MODELS = [
       sorted: 1, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  ...openaiModels.map((name) => ({
+  ...yiModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: seq++, // Global sequence sort(index)
     provider: {
-      id: "azure",
-      providerName: "Azure",
-      providerType: "azure",
-      sorted: 2,
+      id: "openai",
+      providerName: "OpenAI",
+      providerType: "openai",
+      sorted: 2, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  ...googleModels.map((name) => ({
+  ...zhipuModels.map((name) => ({
     name,
     available: true,
-    sorted: seq++,
+    sorted: seq++, // Global sequence sort(index)
     provider: {
-      id: "google",
-      providerName: "Google",
-      providerType: "google",
-      sorted: 3,
+      id: "openai",
+      providerName: "OpenAI",
+      providerType: "openai",
+      sorted: 3, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
-  ...anthropicModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "anthropic",
-      providerName: "Anthropic",
-      providerType: "anthropic",
-      sorted: 4,
-    },
-  })),
+  // ...openaiModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "azure",
+  //     providerName: "Azure",
+  //     providerType: "azure",
+  //     sorted: 2,
+  //   },
+  // })),
+  // ...googleModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "google",
+  //     providerName: "Google",
+  //     providerType: "google",
+  //     sorted: 3,
+  //   },
+  // })),
+  // ...anthropicModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "anthropic",
+  //     providerName: "Anthropic",
+  //     providerType: "anthropic",
+  //     sorted: 4,
+  //   },
+  // })),
   ...baiduModels.map((name) => ({
     name,
     available: true,
@@ -426,39 +469,39 @@ export const DEFAULT_MODELS = [
       sorted: 7,
     },
   })),
-  ...tencentModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "tencent",
-      providerName: "Tencent",
-      providerType: "tencent",
-      sorted: 8,
-    },
-  })),
-  ...moonshotModes.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "moonshot",
-      providerName: "Moonshot",
-      providerType: "moonshot",
-      sorted: 9,
-    },
-  })),
-  ...iflytekModels.map((name) => ({
-    name,
-    available: true,
-    sorted: seq++,
-    provider: {
-      id: "iflytek",
-      providerName: "Iflytek",
-      providerType: "iflytek",
-      sorted: 10,
-    },
-  })),
+  // ...tencentModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "tencent",
+  //     providerName: "Tencent",
+  //     providerType: "tencent",
+  //     sorted: 8,
+  //   },
+  // })),
+  // ...moonshotModes.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "moonshot",
+  //     providerName: "Moonshot",
+  //     providerType: "moonshot",
+  //     sorted: 9,
+  //   },
+  // })),
+  // ...iflytekModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++,
+  //   provider: {
+  //     id: "iflytek",
+  //     providerName: "Iflytek",
+  //     providerType: "iflytek",
+  //     sorted: 10,
+  //   },
+  // })),
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
