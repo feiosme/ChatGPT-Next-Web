@@ -63,8 +63,8 @@ export const DEFAULT_CONFIG = {
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "gpt-4o-mini" as ModelType,
-    providerName: "OpenAI" as ServiceProvider,
+    model: "qwen-max" as ModelType,
+    providerName: "Alibaba" as ServiceProvider,
     temperature: 0.5,
     top_p: 1,
     max_tokens: 8192,
@@ -73,8 +73,8 @@ export const DEFAULT_CONFIG = {
     sendMemory: true,
     historyMessageCount: 8,
     compressMessageLengthThreshold: 4096,
-    compressModel: "",
-    compressProviderName: "",
+    compressModel: "qwen2.5-72b-instruct",
+    compressProviderName: "Alibaba",
     enableInjectSystemPrompts: true,
     template: config?.template ?? DEFAULT_INPUT_TEMPLATE,
     size: "1024x1024" as DalleSize,
@@ -83,7 +83,7 @@ export const DEFAULT_CONFIG = {
   },
 
   ttsConfig: {
-    enable: false,
+    enable: true,
     autoplay: false,
     engine: DEFAULT_TTS_ENGINE,
     model: DEFAULT_TTS_MODEL,
