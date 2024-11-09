@@ -323,24 +323,27 @@ const yiModels = [
 ];
 
 // const googleModels = [
-//   "gemini-1.0-pro",
+//   "gemini-1.5-flash-002",
+//   "gemini-1.5-pro-002",
+//   // "gemini-1.0-pro",
 //   "gemini-1.5-pro-latest",
-//   "gemini-1.5-flash-latest",
-//   "gemini-pro-vision",
+//   // "gemini-1.5-flash-latest",
+//   // "gemini-pro-vision",
 // ];
 
-// const anthropicModels = [
-//   "claude-instant-1.2",
-//   "claude-2.0",
-//   "claude-2.1",
-//   "claude-3-sonnet-20240229",
-//   "claude-3-opus-20240229",
-//   "claude-3-haiku-20240307",
-//   "claude-3-5-sonnet-20240620",
-//   "claude-3-5-sonnet-20241022",
-//   "claude-3-5-sonnet-latest",
-//   "claude-3-opus-latest",
-// ];
+const anthropicModels = [
+  // "claude-instant-1.2",
+  // "claude-2.0",
+  // "claude-2.1",
+  "claude-3-sonnet-20240229",
+  "claude-3-opus-20240229",
+  "claude-3-haiku-20240307",
+  "claude-3-5-sonnet-20240620",
+  "claude-3-5-sonnet-20241022",
+  "claude-3-5-sonnet-latest",
+  "claude-3-opus-latest",
+  "claude-3-5-haiku-20241022",
+];
 
 const baiduModels = [
   "ernie-4.0-turbo-8k",
@@ -444,6 +447,17 @@ export const DEFAULT_MODELS = [
       sorted: 2, // 这里是固定的，确保顺序与之前内置的版本一致
     },
   })),
+  // ...googleModels.map((name) => ({
+  //   name,
+  //   available: true,
+  //   sorted: seq++, // Global sequence sort(index)
+  //   provider: {
+  //     id: "openai",
+  //     providerName: "OpenAI",
+  //     providerType: "openai",
+  //     sorted: 3, // 这里是固定的，确保顺序与之前内置的版本一致
+  //   },
+  // })),
   // ...zhipuModels.map((name) => ({
   //   name,
   //   available: true,
@@ -477,17 +491,17 @@ export const DEFAULT_MODELS = [
   //     sorted: 3,
   //   },
   // })),
-  // ...anthropicModels.map((name) => ({
-  //   name,
-  //   available: true,
-  //   sorted: seq++,
-  //   provider: {
-  //     id: "anthropic",
-  //     providerName: "Anthropic",
-  //     providerType: "anthropic",
-  //     sorted: 4,
-  //   },
-  // })),
+  ...anthropicModels.map((name) => ({
+    name,
+    available: true,
+    sorted: seq++,
+    provider: {
+      id: "anthropic",
+      providerName: "Anthropic",
+      providerType: "anthropic",
+      sorted: 4,
+    },
+  })),
   ...baiduModels.map((name) => ({
     name,
     available: true,
