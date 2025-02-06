@@ -72,7 +72,7 @@ export const DEFAULT_CONFIG = {
     presence_penalty: 0,
     frequency_penalty: 0,
     sendMemory: true,
-    historyMessageCount: 8,
+    historyMessageCount: 16,
     compressMessageLengthThreshold: 4096,
     compressModel: "qwen2.5-72b-instruct",
     compressProviderName: "Alibaba",
@@ -93,7 +93,7 @@ export const DEFAULT_CONFIG = {
   },
 
   realtimeConfig: {
-    enable: false,
+    enable: true,
     provider: "OpenAI" as ServiceProvider,
     model: "gpt-4o-realtime-preview-2024-10-01",
     apiKey: "",

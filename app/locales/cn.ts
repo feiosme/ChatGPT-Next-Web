@@ -625,7 +625,7 @@ const cn = {
   Store: {
     DefaultTopic: "新的聊天",
     BotHello: `有什么可以帮你的吗
-      \ 🥳 新增OpenAI o1、零一万物lightning、glm4-plus模型，新增文字转语音。
+      \ 🥳 新增OpenAI o3、DeepSeek R1满血版、DeepSeek V3，支持OpenAI实时对话（右下角）。
       \ 🚧 所有内容都将发送到对应外部服务器，注意保密。`,
     Error: "出错了，稍后重试吧",
     Prompt: {
