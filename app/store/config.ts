@@ -64,8 +64,8 @@ export const DEFAULT_CONFIG = {
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "qwen-max" as ModelType,
-    providerName: "Alibaba" as ServiceProvider,
+    model: "ep-20250214105241-rbm4f" as ModelType,
+    providerName: "ByteDance" as ServiceProvider,
     temperature: 0.5,
     top_p: 1,
     max_tokens: 8192,
@@ -93,7 +93,7 @@ export const DEFAULT_CONFIG = {
   },
 
   realtimeConfig: {
-    enable: true,
+    enable: false,
     provider: "OpenAI" as ServiceProvider,
     model: "gpt-4o-realtime-preview-2024-10-01",
     apiKey: "",

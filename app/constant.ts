@@ -507,16 +507,16 @@ const googleModels = [
   // "gemini-1.5-flash",
   // "gemini-1.5-flash-8b",
   "gemini-1.5-flash-002",
-  "gemini-1.5-flash-exp-0827",
-  "learnlm-1.5-pro-experimental",
-  "gemini-exp-1114",
-  "gemini-exp-1121",
-  "gemini-exp-1206",
-  "gemini-2.0-flash",
-  "gemini-2.0-flash-exp",
-  "gemini-2.0-flash-lite-preview-02-05",
-  "gemini-2.0-flash-thinking-exp",
-  "gemini-2.0-flash-thinking-exp-1219",
+  // "gemini-1.5-flash-exp-0827",
+  // "learnlm-1.5-pro-experimental",
+  // "gemini-exp-1114",
+  // "gemini-exp-1121",
+  // "gemini-exp-1206",
+  // "gemini-2.0-flash",
+  // "gemini-2.0-flash-exp",
+  // "gemini-2.0-flash-lite-preview-02-05",
+  // "gemini-2.0-flash-thinking-exp",
+  // "gemini-2.0-flash-thinking-exp-1219",
   "gemini-2.0-flash-thinking-exp-01-21",
   "gemini-2.0-pro-exp",
   "gemini-2.0-pro-exp-02-05",
@@ -562,8 +562,13 @@ const baiduModels = [
 ];
 
 const bytedanceModels = [
+  "Deepseek-r1",
+  "Deepseek-v3",
+  "Doubao-1.5-pro-256k",
+  // "Doubao-1.5-pro-32k",
   // "Doubao-lite-4k",
   // "Doubao-lite-32k",
+  // "Doubao-1.5-lite-32k",
   "Doubao-lite-128k",
   // "Doubao-pro-4k",
   // "Doubao-pro-32k",
@@ -578,6 +583,8 @@ const alibabaModes = [
   // "qwen-max-0428",
   // "qwen-max-0403",
   // "qwen-max-0107",
+  "deepseek-r1",
+  "deepseek-v3",
   "qwen-max-longcontext",
   "qwen1.5-110b-chat",
   "qwen-72b-chat",
@@ -611,16 +618,16 @@ const alibabaModes = [
 
 const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"];
 
-const xAIModes = [
-  "grok-beta",
-  "grok-2",
-  "grok-2-1212",
-  "grok-2-latest",
-  "grok-vision-beta",
-  "grok-2-vision-1212",
-  "grok-2-vision",
-  "grok-2-vision-latest",
-];
+// const xAIModes = [
+//   "grok-beta",
+//   "grok-2",
+//   "grok-2-1212",
+//   "grok-2-latest",
+//   "grok-vision-beta",
+//   "grok-2-vision-1212",
+//   "grok-2-vision",
+//   "grok-2-vision-latest",
+// ];
 
 const chatglmModels = [
   "glm-4-plus",
