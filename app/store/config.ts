@@ -64,8 +64,8 @@ export const DEFAULT_CONFIG = {
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "deepseek-chat" as ModelType,
-    providerName: "DeepSeek" as ServiceProvider,
+    model: "Moonshot-Kimi-K2-Instruct" as ModelType,
+    providerName: "Alibaba" as ServiceProvider,
     temperature: 1.0,
     top_p: 1,
     max_tokens: 8192,

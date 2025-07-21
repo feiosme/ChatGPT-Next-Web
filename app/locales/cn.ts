@@ -636,7 +636,7 @@ const cn = {
   Store: {
     DefaultTopic: "新的聊天",
     BotHello: `有什么可以帮你的吗
-      \ 🥳 默认模型升级为DeepSeek-V3-0324并优化调用参数，新增支持qwen-omni、vl等。
+      \ 🥳 默认模型升级为Kimi-K2。
       \ 🚧 所有内容都将发送到对应外部服务器，注意保密。`,
     Error: "出错了，稍后重试吧",
     Prompt: {
