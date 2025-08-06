@@ -41,7 +41,7 @@ const config = getClientConfig();
 export const DEFAULT_CONFIG = {
   lastUpdate: Date.now(), // timestamp, to merge state
 
-  submitKey: SubmitKey.Enter,
+  submitKey: SubmitKey.CtrlEnter,
   avatar: "1f603",
   fontSize: 14,
   fontFamily: "",
@@ -64,17 +64,17 @@ export const DEFAULT_CONFIG = {
   models: DEFAULT_MODELS as any as LLMModel[],
 
   modelConfig: {
-    model: "Moonshot-Kimi-K2-Instruct" as ModelType,
+    model: "qwen3-30b-a3b-instruct-2507" as ModelType,
     providerName: "Alibaba" as ServiceProvider,
-    temperature: 1.0,
-    top_p: 1,
+    temperature: 0.7,
+    top_p: 0.8,
     max_tokens: 8192,
     presence_penalty: 0,
     frequency_penalty: 0,
     sendMemory: true,
     historyMessageCount: 16,
-    compressMessageLengthThreshold: 65536,
-    compressModel: "qwen2.5-32b-instruct",
+    compressMessageLengthThreshold: 16384,
+    compressModel: "qwen3-30b-a3b-instruct-2507",
     compressProviderName: "Alibaba",
     enableInjectSystemPrompts: true,
     template: config?.template ?? DEFAULT_INPUT_TEMPLATE,
