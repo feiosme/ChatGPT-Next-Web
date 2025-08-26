@@ -618,6 +618,7 @@ const bytedanceModels = [
   // "Doubao-pro-32k",
   "Doubao-pro-128k",
   "Moonshot-v1-128k",
+  "doubao-seed-1-6-thinking-250715",
 ];
 
 const alibabaModes = [
