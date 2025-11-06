@@ -493,7 +493,7 @@ export const VISION_MODEL_REGEXES = [
   /o3/,
   /o4-mini/,
   /grok-4/i,
-  /gpt-5/
+  /gpt-5/,
 ];
 
 export const EXCLUDE_VISION_MODEL_REGEXES = [/claude-3-5-haiku-20241022/];
@@ -631,6 +631,7 @@ const alibabaModes = [
   "qwen-turbo",
   "qwen-plus",
   "qwen-max",
+  "qwen3-max",
   "qwen3-30b-a3b-instruct-2507",
   "qwen3-30b-a3b-thinking-2507",
   "qwen3-235b-a22b-instruct-2507",
@@ -689,28 +690,33 @@ const alibabaModes = [
 
 const deepseekModels = ["deepseek-chat", "deepseek-coder", "deepseek-reasoner"];
 
-// const xAIModes = [
-//   "grok-beta",
-//   "grok-2",
-//   "grok-2-1212",
-//   "grok-2-latest",
-//   "grok-vision-beta",
-//   "grok-2-vision-1212",
-//   "grok-2-vision",
-//   "grok-2-vision-latest",
-//   "grok-3-mini-fast-beta",
-//   "grok-3-mini-fast",
-//   "grok-3-mini-fast-latest",
-//   "grok-3-mini-beta",
-//   "grok-3-mini",
-//   "grok-3-mini-latest",
-//   "grok-3-fast-beta",
-//   "grok-3-fast",
-//   "grok-3-fast-latest",
-//   "grok-3-beta",
-//   "grok-3",
-//   "grok-3-latest",
-// ];
+const xAIModes = [
+  "grok-beta",
+  "grok-2",
+  "grok-2-1212",
+  "grok-2-latest",
+  "grok-vision-beta",
+  "grok-2-vision-1212",
+  "grok-2-vision",
+  "grok-2-vision-latest",
+  "grok-3-mini-fast-beta",
+  "grok-3-mini-fast",
+  "grok-3-mini-fast-latest",
+  "grok-3-mini-beta",
+  "grok-3-mini",
+  "grok-3-mini-latest",
+  "grok-3-fast-beta",
+  "grok-3-fast",
+  "grok-3-fast-latest",
+  "grok-3-beta",
+  "grok-3",
+  "grok-3-latest",
+  "grok-4",
+  "grok-4-0709",
+  "grok-4-fast-non-reasoning",
+  "grok-4-fast-reasoning",
+  "grok-code-fast-1",
+];
 
 const chatglmModels = [
   "glm-4-plus",
