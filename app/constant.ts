@@ -36,7 +36,7 @@ export const CHATGLM_BASE_URL = "https://open.bigmodel.cn";
 
 export const SILICONFLOW_BASE_URL = "https://api.siliconflow.cn";
 
-// export const AI302_BASE_URL = "https://api.302.ai";
+export const AI302_BASE_URL = "http://127.0.0.1:3000";
 
 export const CACHE_URL_PREFIX = "/api/cache";
 export const UPLOAD_URL = `${CACHE_URL_PREFIX}/upload`;
@@ -74,7 +74,7 @@ export enum ApiPath {
   ChatGLM = "/api/chatglm",
   DeepSeek = "/api/deepseek",
   SiliconFlow = "/api/siliconflow",
-  // "302.AI" = "/api/302ai",
+  "302.AI" = "/api/302ai",
 }
 
 export enum SlotID {
@@ -133,7 +133,7 @@ export enum ServiceProvider {
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
   SiliconFlow = "SiliconFlow",
-  // "302.AI" = "302.AI",
+  "302.AI" = "302.AI",
 }
 
 // Google API safety settings, see https://ai.google.dev/gemini-api/docs/safety-settings
@@ -160,7 +160,7 @@ export enum ModelProvider {
   ChatGLM = "ChatGLM",
   DeepSeek = "DeepSeek",
   SiliconFlow = "SiliconFlow",
-  // "302.AI" = "302.AI",
+  "302.AI" = "302.AI",
 }
 
 export const Stability = {
@@ -271,12 +271,12 @@ export const SiliconFlow = {
   ListModelPath: "v1/models?&sub_type=chat",
 };
 
-// export const AI302 = {
-//   ExampleEndpoint: AI302_BASE_URL,
-//   ChatPath: "v1/chat/completions",
-//   EmbeddingsPath: "jina/v1/embeddings",
-//   ListModelPath: "v1/models?llm=1",
-// };
+export const AI302 = {
+  ExampleEndpoint: AI302_BASE_URL,
+  ChatPath: "v1/chat/completions",
+  EmbeddingsPath: "jina/v1/embeddings",
+  ListModelPath: "v1/models?llm=1",
+};
 
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 // export const DEFAULT_SYSTEM_TEMPLATE = `
@@ -755,30 +755,31 @@ const siliconflowModels = [
   "Pro/deepseek-ai/DeepSeek-V3",
 ];
 
-// const ai302Models = [
-//   "deepseek-chat",
-//   "gpt-4o",
-//   "chatgpt-4o-latest",
-//   "llama3.3-70b",
-//   "deepseek-reasoner",
-//   "gemini-2.0-flash",
-//   "claude-3-7-sonnet-20250219",
-//   "claude-3-7-sonnet-latest",
-//   "grok-3-beta",
-//   "grok-3-mini-beta",
-//   "gpt-4.1",
-//   "gpt-4.1-mini",
-//   "o3",
-//   "o4-mini",
-//   "qwen3-235b-a22b",
-//   "qwen3-32b",
-//   "gemini-2.5-pro-preview-05-06",
-//   "llama-4-maverick",
-//   "gemini-2.5-flash",
-//   "claude-sonnet-4-20250514",
-//   "claude-opus-4-20250514",
-//   "gemini-2.5-pro",
-// ];
+const ai302Models = [
+  "local-model",
+  // "deepseek-chat",
+  // "gpt-4o",
+  // "chatgpt-4o-latest",
+  // "llama3.3-70b",
+  // "deepseek-reasoner",
+  // "gemini-2.0-flash",
+  // "claude-3-7-sonnet-20250219",
+  // "claude-3-7-sonnet-latest",
+  // "grok-3-beta",
+  // "grok-3-mini-beta",
+  // "gpt-4.1",
+  // "gpt-4.1-mini",
+  // "o3",
+  // "o4-mini",
+  // "qwen3-235b-a22b",
+  // "qwen3-32b",
+  // "gemini-2.5-pro-preview-05-06",
+  // "llama-4-maverick",
+  // "gemini-2.5-flash",
+  // "claude-sonnet-4-20250514",
+  // "claude-opus-4-20250514",
+  // "gemini-2.5-pro",
+];
 
 let seq = 1000; // 内置的模型序号生成器从1000开始
 export const DEFAULT_MODELS = [
@@ -947,17 +948,17 @@ export const DEFAULT_MODELS = [
       sorted: 14,
     },
   })),
-  // ...ai302Models.map((name) => ({
-  //   name,
-  //   available: true,
-  //   sorted: seq++,
-  //   provider: {
-  //     id: "ai302",
-  //     providerName: "302.AI",
-  //     providerType: "ai302",
-  //     sorted: 15,
-  //   },
-  // })),
+  ...ai302Models.map((name) => ({
+    name,
+    available: true,
+    sorted: seq++,
+    provider: {
+      id: "ai302",
+      providerName: "302.AI",
+      providerType: "ai302",
+      sorted: 15,
+    },
+  })),
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;

@@ -242,6 +242,26 @@ export function isModelNotavailableInServer(
 
   const modelTable = collectModelTable(DEFAULT_MODELS, customModels);
 
+  // Map provider names to their actual provider IDs used in model table
+  const providerIdMap: Record<string, string> = {
+    "302.AI": "ai302",
+    OpenAI: "openai",
+    Azure: "azure",
+    Google: "google",
+    Anthropic: "anthropic",
+    Baidu: "baidu",
+    ByteDance: "bytedance",
+    Alibaba: "alibaba",
+    Tencent: "tencent",
+    Moonshot: "moonshot",
+    Iflytek: "iflytek",
+    XAI: "xai",
+    ChatGLM: "chatglm",
+    DeepSeek: "deepseek",
+    SiliconFlow: "siliconflow",
+    Stability: "stability",
+  };
+
   const providerNamesArray = Array.isArray(providerNames)
     ? providerNames
     : [providerNames];
@@ -251,7 +271,10 @@ export function isModelNotavailableInServer(
       return !Object.values(modelTable).filter((v) => v.name === modelName)?.[0]
         ?.available;
     }
-    const fullName = `${modelName}@${providerName.toLowerCase()}`;
+    // Map provider name to actual provider ID used in model table
+    const actualProviderId =
+      providerIdMap[providerName] || providerName.toLowerCase();
+    const fullName = `${modelName}@${actualProviderId}`;
     if (modelTable?.[fullName]?.available === true) return false;
   }
   return true;
